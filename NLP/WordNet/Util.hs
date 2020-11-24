@@ -2,11 +2,8 @@ module NLP.WordNet.Util where
 
 import NLP.WordNet.PrimTypes
 
-#if MIN_VERSION_base(4,6,0)
 import Prelude
-#else
 import Prelude hiding (catch)
-#endif
 import Control.Exception
 import Control.Monad
 import Data.Char (toLower)
@@ -34,11 +31,11 @@ maybeRead :: (Read a, Monad m) => String -> m a
 maybeRead s = 
   case reads s of
     (a,_):_ -> return a
-    _       -> fail "error parsing string"
+    _       -> error "error parsing string"
 
 matchN :: Monad m => Int -> [a] -> m [a]
 matchN n l | length l >= n = return l
-           | otherwise     = fail "expecting more tokens"
+           | otherwise     = error "expecting more tokens"
 
 lexId :: Synset -> Int -> Int
 lexId x n = (\ (_,i,_) -> i) (ssWords x !! n)

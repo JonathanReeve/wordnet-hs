@@ -1,0 +1,5 @@
+* WordNet
+
+Haskell bindings to the Princeton WordNet, a relational lexicon for English words.
+
+This fork is a WIP update for modern GHC versions.

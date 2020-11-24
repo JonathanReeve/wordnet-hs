@@ -14,7 +14,7 @@ Cabal-Version:      >= 1.8
 Tested-With:        GHC == 7.4.2, GHC == 7.6.3, GHC == 7.7.20130824
 
 Library
-    Build-depends: base == 4.*, containers, filepath, array
+    Build-depends: base == 4.13.0.0, containers, filepath, array
     Exposed-Modules:
         NLP.WordNet
 
